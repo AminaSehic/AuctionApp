@@ -2,11 +2,8 @@ package com.atlantbhinternship.auctionapp.requests;
 
 import lombok.*;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode
-@ToString
 @Data
+@AllArgsConstructor
 public class RegistrationRequest {
     private String firstName;
     private String lastName;

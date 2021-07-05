@@ -1,14 +1,9 @@
 package com.atlantbhinternship.auctionapp.requests;
 
-
 import lombok.*;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode
-@ToString
 @Data
-
+@AllArgsConstructor
 public class LoginRequest {
     private String email;
     private String password;

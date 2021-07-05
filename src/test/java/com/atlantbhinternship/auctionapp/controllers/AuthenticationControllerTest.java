@@ -16,22 +16,21 @@ class AuthenticationControllerTest {
     private AuthenticationController authenticationController;
 
     @Test
-    public void registerTest() {
+    public void shouldRegisterUser() {
         RegistrationRequest registrationRequest = new RegistrationRequest("amina", "sehic", "pasvord", "sehic.amina11@gmail.com");
         ResponseEntity<?> responseEntity = authenticationController.register(registrationRequest);
         assertEquals(201, responseEntity.getStatusCodeValue());
     }
     @Test
-    public void loginTest(){
+    public void shouldLoginUser(){
         LoginRequest loginRequest = new LoginRequest("sehic.amina11@gmail.com", "pasvord");
         ResponseEntity<?> responseEntity = authenticationController.login(loginRequest);
-        assertEquals(201, responseEntity.getStatusCodeValue());
+        assertEquals(200, responseEntity.getStatusCodeValue());
     }
     @Test
-    public void loginTest1(){
+    public void shouldFailLogin(){
         LoginRequest loginRequest = new LoginRequest("sehic.amina11@gmail.com", "password123");
         ResponseEntity<?> responseEntity = authenticationController.login(loginRequest);
         assertEquals(400, responseEntity.getStatusCodeValue());
     }
-
 }

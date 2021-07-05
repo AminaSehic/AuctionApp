@@ -2,9 +2,7 @@ package com.atlantbhinternship.auctionapp.config;
 
 import com.atlantbhinternship.auctionapp.services.CustomUserDetailsService;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
-
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -23,7 +21,6 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 
     private final CustomUserDetailsService customUserDetailsService;
     private final String[] unprotectedRoutes = {"/**"};
-
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {

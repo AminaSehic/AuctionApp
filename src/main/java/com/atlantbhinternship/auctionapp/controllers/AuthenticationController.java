@@ -52,7 +52,6 @@ public class AuthenticationController {
 
     }
 
-
     @PostMapping(path = "/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
         String jwt = appUserService.signInUser(loginRequest);

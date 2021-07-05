@@ -1,6 +1,5 @@
 package com.atlantbhinternship.auctionapp.services;
 
-
 import com.atlantbhinternship.auctionapp.models.User;
 import com.atlantbhinternship.auctionapp.repositories.UserRepository;
 import com.atlantbhinternship.auctionapp.requests.LoginRequest;
@@ -25,7 +24,6 @@ public class AppUserService {
     private final JwtTokenProvider jwtTokenProvider;
     private final PasswordEncoder passwordEncoder;
 
-
     public User getUserByUsername(String email) {
         Optional<User> user = userRepository.findByEmail(email);
         if (user.isPresent()) {
@@ -38,7 +36,6 @@ public class AppUserService {
         User user = new User(registrationRequest.getFirstName(), registrationRequest.getLastName(), registrationRequest.getEmail());
         String encodedPassword = passwordEncoder.encode(registrationRequest.getPassword());
         user.setPasswordHash(encodedPassword);
-        System.out.println(user.getPasswordHash());
         return userRepository.save(user);
     }
 

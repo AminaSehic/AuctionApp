@@ -13,10 +13,8 @@ import java.util.Collection;
 
 @Entity
 @Table(name = "user")
-@AllArgsConstructor
 @NoArgsConstructor
 @Data
-@EqualsAndHashCode
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
