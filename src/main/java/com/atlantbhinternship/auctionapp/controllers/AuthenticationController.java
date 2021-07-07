@@ -33,11 +33,9 @@ public class AuthenticationController {
 
     @PostMapping(path = "/registration")
     public ResponseEntity<?> register(@Valid @RequestBody RegistrationRequest request) {
-
         if (appUserService.exist(request)) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body((new ErrorMessage(HttpStatus.BAD_REQUEST.value(), "User with that email already exists!")));
         }
-
         User result = appUserService.createUserAccount(request);
         URI location = ServletUriComponentsBuilder
                 .fromCurrentContextPath().path("/**")
@@ -49,7 +47,6 @@ public class AuthenticationController {
                         result.getLastName(),
                         result.getEmail()
                 )));
-
     }
 
     @PostMapping(path = "/login")

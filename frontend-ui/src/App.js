@@ -5,6 +5,9 @@ import Footer from './components/Footer'
 import AboutUs from './components/AboutUs'
 import PrivacyAndPolicy from "./components/PrivacyAndPolicy";
 import TearmsAndConditions from "./components/TearmsAndConditions";
+import Login from "./components/Login"
+import Register from "./components/Registration";
+import '../src/css/login-registration.css'
 
 import {
     BrowserRouter as Router,
@@ -13,7 +16,7 @@ import {
     Link
 } from "react-router-dom";
 
-export default function App(){
+export default function App() {
     return (
         <div className="App">
             <Router>
@@ -22,8 +25,18 @@ export default function App(){
                 </header>
                 <div className={"container"}>
                     <Switch>
+                        <Route path="/login">
+                            <Login/>
+                        </Route>
+                        <Route path="/register">
+                            <Register/>
+                        </Route>
+                    </Switch>
+                </div>
+                <div className={"container"}>
+                    <Switch>
                         <Route path="/about">
-                            <AboutUs/>¸
+                            <AboutUs/>
                         </Route>
                         <Route path="/privacy">
                             <PrivacyAndPolicy/>
