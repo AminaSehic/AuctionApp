@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from 'axios';
 import {useHistory} from "react-router-dom";
+import request from "./Auth";
 
 function LoginNavbar() {
     return (
@@ -64,16 +65,8 @@ const Login = () => {
     }
     const handleLoginClick = async (e) => {
         lsRememberMe();
-        const url = "http://localhost:8080/api/login"
-        const config = {
-            headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS'
-            }
-        }
         try {
-            const response = await axios.post(url, credentials, config);
+            const response = await request('POST', '/api/login', credentials);
             if (response.data) {
                 return JSON.stringify(response.data);
                 history.push("/aboutUs");

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import axios from "axios";
 import {Link, useHistory} from "react-router-dom";
+import request from "./Auth";
 
 function RegisterNavbar() {
     return (
@@ -9,7 +9,6 @@ function RegisterNavbar() {
         </div>
     );
 }
-
 const Register = () => {
     let history = useHistory();
     const [credentials, setCredentials] = useState({
@@ -44,19 +43,11 @@ const Register = () => {
         })
     }
     const handleClick = async (e) => {
-        const url = "http://localhost:8080/api/registration"
-        const config = {
-            headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS'
-            }
-        }
         try {
-            const response = await axios.post(url, credentials, config);
+            const response = await request('POST', '/api/registration', credentials);
             if (response.data) {
                 return JSON.stringify(response.data);
-                history.push("/aboutUs");
+                history.push("/login");
             }
         } catch (err) {
             console.log(err.data);

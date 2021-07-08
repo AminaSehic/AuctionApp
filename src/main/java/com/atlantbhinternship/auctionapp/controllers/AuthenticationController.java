@@ -24,7 +24,7 @@ import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
-@RequestMapping(value = "/api", method = RequestMethod.GET)
+@RequestMapping(value = "/api")
 @AllArgsConstructor
 public class AuthenticationController {
     private final AppUserService appUserService;
