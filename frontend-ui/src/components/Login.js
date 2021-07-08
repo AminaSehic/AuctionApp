@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import axios from 'axios';
 import {useHistory} from "react-router-dom";
 
@@ -9,18 +9,51 @@ function LoginNavbar() {
         </div>
     );
 }
-
 const Login = () => {
     let history = useHistory();
     const [credentials, setCredentials] = useState({
         email: '',
-        password: ''
+        password: '',
+        rememberMe: ''
     })
-
+    useEffect(() => {
+        if (localStorage.checkbox && localStorage.checkbox !== "") {
+            setCredentials({
+                ...credentials,
+                ...{
+                    email: localStorage.email,
+                    rememberMe: localStorage.checkbox
+                }
+            })
+        } else {
+            setCredentials({
+                ...credentials,
+                ...{
+                    email: "",
+                    rememberMe: ""
+                }
+            })
+        }
+    }, []);
+    const lsRememberMe = () => {
+        if (credentials.rememberMe && credentials.email !== "") {
+            localStorage.email = credentials.email;
+            localStorage.checkbox = credentials.rememberMe;
+        } else {
+            localStorage.email = "";
+            localStorage.checkbox = "";
+        }
+    }
     const handleEmailChange = (e) => {
         setCredentials({
             ...credentials,
             ...{email: e.target.value.toString()}
+        })
+    }
+    const handleRememberMeChange = (e) => {
+        setCredentials({
+            ...credentials,
+            ...{rememberMe: e.target.checked}
         })
     }
     const handlePasswordChange = (e) => {
@@ -29,7 +62,8 @@ const Login = () => {
             ...{password: e.target.value.toString()}
         })
     }
-    const handleClick = async (e) => {
+    const handleLoginClick = async (e) => {
+        lsRememberMe();
         const url = "http://localhost:8080/api/login"
         const config = {
             headers: {
@@ -59,6 +93,8 @@ const Login = () => {
                         <p className={"login-email-label"}>Enter Email</p>
                         <input className={"login-input"}
                                type="text"
+                               id={"email"}
+                               value={credentials.email}
                                onChange={handleEmailChange}
                         />
                     </div>
@@ -68,9 +104,15 @@ const Login = () => {
                                type="password"
                                onChange={handlePasswordChange}/>
                     </div>
+                    <div>
+                        <input type={"checkbox"} value={"lsRememberMe"} id={"rememberMe"}
+                               checked={credentials.rememberMe}
+                               onChange={handleRememberMeChange}/>
+                        <label htmlFor={"rememberMe"}>Remember me </label>
+                    </div>
                     <div className={"login-button"}>
                         <button
-                            onClick={handleClick}
+                            onClick={handleLoginClick}
                             type="submit">
                             LOGIN
                         </button>

@@ -23,9 +23,8 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import javax.validation.Valid;
 import java.net.URI;
 
-
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping(value = "/api", method = RequestMethod.GET)
 @AllArgsConstructor
 public class AuthenticationController {
     private final AppUserService appUserService;

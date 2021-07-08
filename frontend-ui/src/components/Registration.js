@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
-import {useHistory} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 
 function RegisterNavbar() {
     return (
@@ -101,6 +101,12 @@ const Register = () => {
                             onClick={handleClick}
                             type="submit">REGISTER
                         </button>
+                    </div>
+                    <div className={"already-have-account"}>
+                        <p className={"already-have-account-text"}>
+                            Already have an account?
+                        </p>
+                        <Link to="/login" className={"already-have-account-link"}>Login</Link>
                     </div>
                 </form>
             </div>
