@@ -57,11 +57,11 @@ function LogInComponent() {
     return (
         <ul className={"navbar-list text-align-right "}>
             <li className={"black-items"}>
-                <a className={"black-items"} href={"#"}>Login</a>
+                <Link to = "/login" className={"black-items"}>Login</Link>
             </li>
             <p className={"black-items-or"}>or </p>
             <li className={"black-items"}>
-                <a className={"black-items"} href={"#"}>Create an Account</a>
+                <Link to ="/register" className={"black-items"}>Create an Account</Link>
             </li>
         </ul>
     );

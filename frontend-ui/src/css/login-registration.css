@@ -1,0 +1,60 @@
+.login-wrapper, .register-wrapper {
+    display: inline-grid;
+    width: 40%;
+    background: white;
+    border: #D8D8D8 solid 1px;
+    height: 400px;
+    margin-top: 3%;
+}
+.register-wrapper{
+    height: 420px !important;
+}
+.login-h1, .register-h1{
+    margin: 0;
+    height: 65%;
+    background: #ededed;
+}
+.login-form, .register-form {
+    width: 90%;
+}
+.input-field{
+    text-align: left;
+}
+.register-label{
+    width: 95%;
+    margin:3px;
+}
+.login-input, .register-input {
+    width: 95%;
+    border: #D8D8D8 solid 1px;
+    background: #ededed;
+}
+.login-input{
+    height: 40px;
+}
+.register-input{
+    height: 20px;
+}
+.login-button, .register-button {
+    width: 95%;
+    border: #8367D8 solid 1px;
+    margin: 10% 10% auto auto;
+    text-align: center;
+}
+.register-button{
+    font-size: 14px;
+    height: 20px;
+}
+.login-button{
+    height: 40px;
+    font-size: 18px;
+}
+.already-have-account{
+    font-size: 16px;
+    color: #D8D8D8;
+    display: inline-flex;
+}
+.already-have-account-link{
+    text-decoration: none;
+    margin: auto 20px;
+}

@@ -6,6 +6,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import java.util.Collection;
 
@@ -22,6 +23,7 @@ public class User implements UserDetails {
     @NotBlank
     private String firstName;
     @NotBlank
+    @Email(regexp=".*@.*\\..*", message = "Email should be valid")
     private String email;
     @NotBlank
     private String passwordHash;
