@@ -6,7 +6,7 @@
     margin-top: 20px;
     min-width: 400px;
 }
-.login-input, .password-input{
+.input-element{
     border: 1px solid #8367D8;
     border-radius: 4px;
     background: #ededed;
@@ -14,9 +14,7 @@
     width: 90%;
 
 }
-.register-wrapper{
-    height: 420px !important;
-}
+
 .login-h1, .register-h1{
     margin: 0;
     background: #ededed;
@@ -30,7 +28,7 @@
     margin: 10% auto;
 }
 
-#login-submit{
+#login-submit, #register-submit{
     height: 40px;
     color: white;
     font-size: 14px;

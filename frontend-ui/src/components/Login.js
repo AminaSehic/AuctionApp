@@ -84,7 +84,7 @@ const Login = () => {
                       action="javascript:void(0)">
                     <div className={"input-field"}>
                         <p className={"login-email-label"}>Enter Email</p>
-                        <input className={"login-input"}
+                        <input className={"input-element"}
                                type="text"
                                id={"email"}
                                value={credentials.email}
@@ -93,7 +93,7 @@ const Login = () => {
                     </div>
                     <div className={"input-field"}>
                         <p className={"login-email-label"}>Password</p>
-                        <input className={"login-input"}
+                        <input className={"input-element"}
                                type="password"
                                onChange={handlePasswordChange}/>
                     </div>
