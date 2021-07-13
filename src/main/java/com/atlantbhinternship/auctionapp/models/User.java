@@ -11,7 +11,7 @@ import javax.validation.constraints.NotBlank;
 import java.util.Collection;
 
 @Entity
-@Table(name = "user")
+@Table(name="`User`")
 @NoArgsConstructor
 @Data
 public class User implements UserDetails {
