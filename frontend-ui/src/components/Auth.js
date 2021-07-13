@@ -4,8 +4,8 @@ const request = async (typeOfReq, urlReq, bodyReq = null) => {
     if (!["GET", "POST", "PUT", "DELETE", "PATCH"].includes(typeOfReq)) {
         console.log("Error");
     }
-    let HOST_URL = 'http://localhost:8080/';
-    const url = HOST_URL`${urlReq}`;
+    let HOST_URL = 'https://auctionapp-b.herokuapp.com/';
+    const url = `${HOST_URL}${urlReq}`;
     let response = null;
     const config = {
         headers: {

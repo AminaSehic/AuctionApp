@@ -66,7 +66,7 @@ const Login = () => {
     const handleLoginClick = async (e) => {
         lsRememberMe();
         try {
-            const response = await request('POST', '/api/login', credentials);
+            const response = await request('POST', 'api/login', credentials);
             if (response.data) {
                 return JSON.stringify(response.data);
                 history.push("/aboutUs");
@@ -103,8 +103,9 @@ const Login = () => {
                                onChange={handleRememberMeChange}/>
                         <label htmlFor={"rememberMe"}>Remember me </label>
                     </div>
-                    <div className={"login-button"}>
+                    <div className={"input-field"}>
                         <button
+                            id={"login-submit"}
                             onClick={handleLoginClick}
                             type="submit">
                             LOGIN
