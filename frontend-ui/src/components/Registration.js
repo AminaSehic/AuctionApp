@@ -9,6 +9,7 @@ function RegisterNavbar() {
         </div>
     );
 }
+
 const Register = () => {
     let history = useHistory();
     const [credentials, setCredentials] = useState({
