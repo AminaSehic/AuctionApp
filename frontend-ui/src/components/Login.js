@@ -66,7 +66,7 @@ const Login = () => {
     const handleLoginClick = async (e) => {
         lsRememberMe();
         try {
-            const response = await request('POST', '/api/login', credentials);
+            const response = await request('POST', 'api/login', credentials);
             if (response.data) {
                 return JSON.stringify(response.data);
                 history.push("/aboutUs");
@@ -84,7 +84,7 @@ const Login = () => {
                       action="javascript:void(0)">
                     <div className={"input-field"}>
                         <p className={"login-email-label"}>Enter Email</p>
-                        <input className={"login-input"}
+                        <input className={"input-element"}
                                type="text"
                                id={"email"}
                                value={credentials.email}
@@ -93,7 +93,7 @@ const Login = () => {
                     </div>
                     <div className={"input-field"}>
                         <p className={"login-email-label"}>Password</p>
-                        <input className={"login-input"}
+                        <input className={"input-element"}
                                type="password"
                                onChange={handlePasswordChange}/>
                     </div>
@@ -103,8 +103,9 @@ const Login = () => {
                                onChange={handleRememberMeChange}/>
                         <label htmlFor={"rememberMe"}>Remember me </label>
                     </div>
-                    <div className={"login-button"}>
+                    <div className={"input-field"}>
                         <button
+                            id={"login-submit"}
                             onClick={handleLoginClick}
                             type="submit">
                             LOGIN

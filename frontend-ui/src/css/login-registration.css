@@ -3,58 +3,55 @@
     width: 40%;
     background: white;
     border: #D8D8D8 solid 1px;
-    height: 400px;
-    margin-top: 3%;
+    margin-top: 20px;
+    min-width: 400px;
 }
-.register-wrapper{
-    height: 420px !important;
+
+.input-element {
+    border: 1px solid #8367D8;
+    border-radius: 4px;
+    background: #ededed;
+    padding: 10px 5%;
+    width: 90%;
 }
-.login-h1, .register-h1{
+
+.login-h1, .register-h1 {
     margin: 0;
-    height: 65%;
     background: #ededed;
 }
+
 .login-form, .register-form {
     width: 90%;
 }
-.input-field{
+
+.input-field {
     text-align: left;
-}
-.register-label{
     width: 95%;
-    margin:3px;
+    margin: 10% auto;
 }
-.login-input, .register-input {
-    width: 95%;
-    border: #D8D8D8 solid 1px;
-    background: #ededed;
-}
-.login-input{
+
+#login-submit, #register-submit {
     height: 40px;
-}
-.register-input{
-    height: 20px;
-}
-.login-button, .register-button {
-    width: 95%;
-    border: #8367D8 solid 1px;
-    margin: 10% 10% auto auto;
-    text-align: center;
-}
-.register-button{
+    color: white;
     font-size: 14px;
-    height: 20px;
+    background: #8367D8;
+    width: 95%;
+    margin: 10% auto;
+    cursor: pointer;
 }
-.login-button{
-    height: 40px;
-    font-size: 18px;
+
+.register-label {
+    width: 95%;
+    margin: 3px;
 }
-.already-have-account{
+
+.already-have-account {
     font-size: 16px;
     color: #D8D8D8;
     display: inline-flex;
 }
-.already-have-account-link{
+
+.already-have-account-link {
     text-decoration: none;
     margin: auto 20px;
 }

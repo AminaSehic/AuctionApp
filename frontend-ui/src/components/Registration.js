@@ -9,6 +9,7 @@ function RegisterNavbar() {
         </div>
     );
 }
+
 const Register = () => {
     let history = useHistory();
     const [credentials, setCredentials] = useState({
@@ -44,7 +45,7 @@ const Register = () => {
     }
     const handleClick = async (e) => {
         try {
-            const response = await request('POST', '/api/registration', credentials);
+            const response = await request('POST', 'api/registration', credentials);
             if (response.data) {
                 return JSON.stringify(response.data);
                 history.push("/login");
@@ -62,33 +63,34 @@ const Register = () => {
                       action="javascript:void(0)">
                     <div className={"input-field"}>
                         <p className={"register-label"}>First Name</p>
-                        <input className={"register-input"}
+                        <input className={"input-element"}
                                type="fistName"
                                onChange={handleFistNameChange}
                         />
                     </div>
                     <div className={"input-field"}>
                         <p className={"register-label"}>Last Name</p>
-                        <input className={"register-input"}
+                        <input className={"input-element"}
                                type="lastName"
                                onChange={handleLastNameChange}/>
                     </div>
                     <div className={"input-field"}>
                         <p className={"register-label"}>Enter Email</p>
-                        <input className={"register-input"}
+                        <input className={"input-element"}
                                type="text"
                                onChange={handleEmailChange}
                         />
                     </div>
                     <div className={"input-field"}>
                         <p className={"register-label"}>Password</p>
-                        <input className={"register-input"}
+                        <input className={"input-element"}
                                type="password"
                                onChange={handlePasswordChange}
                         />
                     </div>
                     <div className={"register-button"}>
                         <button
+                            id={"register-submit"}
                             onClick={handleClick}
                             type="submit">REGISTER
                         </button>
