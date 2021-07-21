@@ -3,10 +3,10 @@ import React from "react";
 function TearmsAndConditionsNavbar() {
     return (
         <div className={"gray-navbar"}>
-            <p className={"left-item"}>TEARMS AND CONDITIONS </p>
+            <p className={"left-item"}>TERMS AND CONDITIONS </p>
             <div className={"right-item"}>
                 <p>SHOP/</p>
-                <p>TEARMS AND CONDITIONS</p>
+                <p>TERMS AND CONDITIONS</p>
             </div>
         </div>
     )

@@ -8,7 +8,8 @@ import TearmsAndConditions from "./components/TearmsAndConditions";
 import Login from "./components/Login"
 import Register from "./components/Registration";
 import '../src/css/login-registration.css'
-
+import LandingPage from "./components/LandingPage"
+import '../src/css/landingpage.css'
 import {
     BrowserRouter as Router,
     Switch,
@@ -23,7 +24,6 @@ export default function App() {
                 <header className="App-header">
                     <Navbar/>
                 </header>
-                <div className={"container"}>
                     <Switch>
                         <Route path="/login">
                             <Login/>
@@ -32,7 +32,6 @@ export default function App() {
                             <Register/>
                         </Route>
                     </Switch>
-                </div>
                 <div className={"container"}>
                     <Switch>
                         <Route path="/about">
@@ -43,6 +42,11 @@ export default function App() {
                         </Route>
                         <Route path="/terms-and-conditions">
                             <TearmsAndConditions/>
+                        </Route>
+                    </Switch>
+                    <Switch>
+                        <Route path="/home">
+                            <LandingPage/>
                         </Route>
                     </Switch>
                 </div>

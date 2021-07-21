@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import axios from 'axios';
 import {useHistory} from "react-router-dom";
 import request from "./Auth";
 
@@ -67,9 +66,8 @@ const Login = () => {
         lsRememberMe();
         try {
             const response = await request('POST', 'api/login', credentials);
-            if (response.data) {
-                return JSON.stringify(response.data);
-                history.push("/aboutUs");
+            if (response.data?.token) {
+                    history.push("/home")
             }
         } catch (err) {
             console.log(err.data);
