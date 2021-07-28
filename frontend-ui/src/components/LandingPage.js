@@ -1,21 +1,14 @@
 import React, {useEffect, useState} from "react";
+import ProductContent from "./ProductContent";
+import ProductCategoriesSideMenu from "./CategoriesSidemenu";
 
 function LandingNavbar() {
     return (
-        <div className={"landing-main"}>
+        <div >
             <div className={"landing-grid"}>
-                <div className={"left-menu"}>
-                    <a href="#" className="active links-left-menu ">CATEGORIES</a>
-                    <a href="#" className="links-left-menu">Fashion</a>
-                    <a href="#" className="links-left-menu">Accessories</a>
-                    <a href="#" className="links-left-menu">Jewelery</a>
-                    <a href="#" className="links-left-menu">Shoes</a>
-                    <a href="#" className="links-left-menu">Sportswear</a>
-                    <a href="#" className="links-left-menu">Home</a>
-                    <a href="#" className="links-left-menu">Electronics</a>
-                    <a href="#" className="links-left-menu">Mobile</a>
-                    <a href="#" className="links-left-menu">Computer</a>
-                    <a href="#" className="links-left-menu">All Categorise</a>
+
+                <div className={"left-menu product-navbar"} id={"product-categories"}>
+                    <ProductCategoriesSideMenu/>
                 </div>
                 <div className={"highlighted-products"}>
                     <div className={"landing-page-text"}>
@@ -34,31 +27,7 @@ function LandingNavbar() {
     )
 }
 
-function Item() {
-    return (
-        <div className="landing-container">
-            <div className="product-item">
-                <div className="product-item-pic">
-                    <img className="product-item-pic" src={"images/template-gray-pic.jpg"}/>
-                </div>
-                <div className="product-item-text">
-                    <h6><a href="#">Shoes Collection</a></h6>
-                    <div className="product-item-price">Start from $59.00</div>
-                </div>
-            </div>
-        </div>
-    )
-}
-function Row() {
-    return (
-        <div className="row">
-            <Item/>
-            <Item/>
-            <Item/>
-            <Item/>
-        </div>
-    )
-}
+
 function newArrivalsVisible() {
     let a = document.getElementsByClassName("new-arrivals-content")[0];
     let b = document.getElementsByClassName("last-chance-content")[0];
@@ -86,13 +55,10 @@ function LandingComponent() {
             </div>
             <div className="content-group">
                 <div className="new-arrivals-content">
-                    <Row/>
-                    <br/>
-                    <Row/>
+                    <ProductContent/>
                 </div>
                 <div className="last-chance-content">
-                    {/*Content for last chance*/}
-                    <Row/>
+                    <ProductContent/>
                     <br/>
                 </div>
             </div>
@@ -101,6 +67,7 @@ function LandingComponent() {
 }
 
 function LandingPage() {
+
     return (
         <div>
             <LandingNavbar/>

@@ -1,0 +1,83 @@
+.product-categories {
+    grid-column-start: 2;
+}
+
+.product-page {
+    grid-template-columns: 1fr 2fr 4fr 1fr;
+    display: grid;
+}
+
+.product-collection {
+    grid-column-start: 3;
+}
+
+#product-categories {
+    background: #cccccc30;
+    border: solid 1px #cccccc;
+}
+
+.subcategories {
+    color: #9B9B9B;
+}
+
+.headline {
+    color: #8367D8;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 10px;
+    text-align: left;
+    inline-size: max-content;
+}
+
+.categories {
+    color: black;
+}
+
+.product-navbar ul {
+    padding: 0;
+    margin: 20px 20px;
+    list-style: none;
+    display: grid;
+}
+
+.product-navbar .links {
+    padding: 0 10px;
+    font-size: 16px;
+    line-height: 40px;
+    text-decoration: none;
+}
+
+.product-navbar .links:hover {
+    background-color: #333;
+}
+
+.product-navbar ul ul {
+    display: none;
+}
+
+.product-navbar ul .list-item:hover > ul {
+    display: inherit;
+}
+
+.product-navbar ul ul .list-item {
+    float: none;
+    display: list-item;
+    position: relative;
+}
+
+.explore-me-button {
+    border: solid 1px #8367D820;
+    cursor: pointer;
+    background: #8367D8;
+    color: white;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.list-item > a:after {
+    content: ' +';
+}
+
+.list-item > a:only-child:after {
+    content: ' ';
+}
