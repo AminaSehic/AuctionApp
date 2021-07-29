@@ -56,11 +56,11 @@ function LogInComponent() {
     return (
         <ul className={"navbar-list text-align-right "}>
             <li className={"black-items"}>
-                <Link to = "/login" className={"black-items"}>Login</Link>
+                <Link to="/login" className={"black-items"}>Login</Link>
             </li>
             <p className={"black-items-or"}>or </p>
             <li className={"black-items"}>
-                <Link to ="/register" className={"black-items"}>Create an Account</Link>
+                <Link to="/register" className={"black-items"}>Create an Account</Link>
             </li>
         </ul>
     );
@@ -97,10 +97,10 @@ function BlackNavbar() {
 function WhiteNavbar() {
     return (
         <nav className={"white-navbar"}>
-            <div className={"auction_div"}>
+            <a className={"auction_div"} href={"/"}>
                 <img className={"auction-picture"} src={"/images/auction.png"} alt=""/>
                 <p>AUCTION</p>
-            </div>
+            </a>
             <Search/>
             <ul className={"white-items"}>
                 <li>
@@ -120,6 +120,29 @@ function WhiteNavbar() {
     )
 }
 
+function WhiteNavbarRegistered() {
+    return (
+        <nav className={"white-navbar"}>
+            <div className={"auction_div"}>
+                <img className={"auction-picture"} src={"/images/auction.png"} alt=""/>
+                <p>AUCTION</p>
+            </div>
+            <Search/>
+            <ul className={"white-items"}>
+                <li>
+                    <a className={"white-items "} href={"#"}>HOME </a>
+                </li>
+                <li>
+                    <a className={"white-items "} href={"#"}>SHOP </a>
+                </li>
+                <li>
+                    <a className={"white-items "} href={"#"}>MY ACCOUNT</a>
+                </li>
+            </ul>
+        </nav>
+    )
+}
+
 function Navbar() {
     return (
         <div>
@@ -128,4 +151,5 @@ function Navbar() {
         </div>
     );
 }
+
 export default Navbar;
